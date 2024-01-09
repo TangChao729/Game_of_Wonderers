@@ -36,3 +36,14 @@ I call this wonderers' simulation.
 ![Preys](Prey_reproduce.gif)
 
 ### Phase 2
+In the second stage, I use Pygame to create the GUI for simulation. Matplotlib is too week to create GUI that can demonstrate the crucial part of the simulation XD. In the Pygame version, the prey and predator are basically following the same rules as the previous version. The biggest differences are that the animals now can move with a velocity and speed, hence they can move much more freely and smoothly. 
+
+![Phase2](Phase2.gif)
+
+### Phase 3
+Animals are continuously evolving, they now have the ability to sense outer world and make decisions. In this stage, I implemented the NEAT algorithm for the animals. Each animal has a genome, the animal live the longest in the simulation will be able to pass its genome to the next generation. The next generation will have a chance to mutate its genome. The mutation can be a new connection between neurons, a new neuron, or a new weight for the connection. Consequently, the animals are able to sense outer world with their antennas.
+
+![Phase3_animal_sensors](Phase3_animal_sensors.gif)
+![Phase3_animal_brain](Phase3_animal_brain.gif)
+![Phase3_simulation](Phase3_simulation.gif)
+
