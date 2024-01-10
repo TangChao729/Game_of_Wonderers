@@ -33,7 +33,7 @@ I call this wonderers' simulation.
 <br>
 
 <div align="center">
-  <img src="gif/phase_1/prey_move.gif" alt="Preys" width="30%"/>
+  <img src="gif/phase_1/prey_move.gif" width="30%"/>
 </div>
 
 <div align="center">
@@ -45,7 +45,7 @@ I call this wonderers' simulation.
 <br>
 
 <div align="center">
-  <img src="gif/phase_1/predator_die.gif" alt="Preys" width="30%"/>
+  <img src="gif/phase_1/predator_die.gif" width="30%"/>
 </div>
 
 <div align="center">
@@ -57,7 +57,7 @@ I call this wonderers' simulation.
 <br>
 
 <div align="center">
-  <img src="gif/phase_1/predator_eat.gif" alt="Preys" width="30%"/>
+  <img src="gif/phase_1/predator_eat.gif" width="30%"/>
 </div>
 
 <div align="center">
@@ -69,16 +69,40 @@ A simulation starting with 100 preys and 50 predators will look like this:
 <br>
 
 <div align="center">
-  <img src="gif/phase_1/simulation.gif" alt="Preys" width="30%"/>
+  <img src="gif/phase_1/simulation.gif" width="30%"/>
 </div>
 
 <div align="center">
   <em>GIF 4: Wonderers' simulation</em>
 </div>
 
+<br>
+
 ### Phase 2
 
 In the second stage, I use Pygame to create the GUI for simulation. Matplotlib is too week to create GUI that can demonstrate the crucial part of the simulation XD. In the Pygame version, the prey and predator are basically following the same rules as the previous version. The biggest differences are that the animals now can move with a velocity and speed, hence they can move much more freely and smoothly.
+
+<br>
+
+<div align="center">
+  <img src="gif/phase_2/prey_predator.png" width="30%"/>
+</div>
+
+<div align="center">
+  <em>PNG 1: Prey & Predator close-up</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="gif/phase_2/phase_2 simulation.gif" width="30%"/>
+</div>
+
+<div align="center">
+  <em>GIF 5: phase_2 simulation.gif</em>
+</div>
+
+<br>
 
 ![Phase2](Phase2.gif)
 
