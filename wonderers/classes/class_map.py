@@ -29,6 +29,7 @@ class Map:
             while attempt < self.size**2 - len(self.predators) - len(self.preys):
                 x = random.randint(0, N-1)
                 y = random.randint(0, N-1)
+
                 if (x, y) not in self.get_occupied_locations():
                     self.preys.append(Prey(x, y))
                     break
@@ -42,6 +43,7 @@ class Map:
             while attempt < self.size**2 - len(self.predators) - len(self.preys):
                 x = random.randint(0, N-1)
                 y = random.randint(0, N-1)
+
                 if (x, y) not in self.get_occupied_locations():
                     self.predators.append(Predator(x, y))
                     break
