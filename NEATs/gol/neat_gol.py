@@ -296,6 +296,65 @@ class GameOfLife:
         pygame.quit()
         sys.exit()
 
+    def sensor_demo(self, 
+            auto_control_prey_num = 1,
+            auto_control_predator_num = 1,
+            auto_control_prey_move = True,
+            auto_control_predator_move = True):
+
+        # initial prey and predator
+        self.preys = []
+        
+        
+        for i in range(auto_control_prey_num):
+            initial_x = self.screen_size // 2
+            initial_y = self.screen_size // 2
+
+            auto_control_prey = self.add_prey(prey_rescaled_image,
+                                            initial_x=initial_x,
+                                            initial_y=initial_y, 
+                                            direction=0, 
+                                            velocity=0.0)
+
+        
+
+        for i in range(auto_control_predator_num):
+            initial_x = self.screen_size // 2 + 150
+            initial_y = self.screen_size // 2
+
+            self.add_predator(predator_rescaled_image,
+                            initial_x=initial_x,
+                            initial_y=initial_y,
+                            direction=-90, 
+                            velocity=2.0)
+
+        running = True
+        while running:
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            keys = pygame.key.get_pressed()
+            
+            # control the predator
+            for predator in self.predators:
+                if auto_control_predator_move:
+                    predator.circle()
+            
+            for prey in self.preys:
+                print(prey.sense())
+            
+
+            self.update() 
+            self.draw()
+            
+            pygame.display.flip()
+            pygame.time.Clock().tick(20)
+
+        pygame.quit()
+        sys.exit()
+
 
     def update(self):
         self.check_collision()
@@ -325,6 +384,7 @@ class GameOfLife:
 
         self.show_life_count()
         # self.show_energy_count()
+        # self.show_sensor(self.preys[0].sense())
 
     def show_life_count(self):
         font = pygame.font.SysFont("Arial", 20)
@@ -334,7 +394,16 @@ class GameOfLife:
     def show_energy_count(self):
         font = pygame.font.SysFont("Arial", 20)
         text = font.render("Energy: " + str(self.the_predator.energy), True, (255, 255, 255))
-        screen.blit(text, (50, 30))
+        self.screen.blit(text, (50, 30))
+
+    def show_sensor(self, sense):
+        # Formatting each distance to have a width of 3 characters
+        formatted_distances = [f"{(179 - dis):3}" for dis in sense]
+
+        font = pygame.font.SysFont("Arial", 15)
+        # Joining the formatted distances into a single string
+        text = font.render("Sensor: " + ' '.join(formatted_distances), True, (255, 255, 255))
+        self.screen.blit(text, (10, 30))
 
 
 if __name__ == '__main__':
@@ -352,6 +421,13 @@ if __name__ == '__main__':
             
             game.run(auto_control_prey_num = 10,
                     auto_control_predator_num = 10,
+                    auto_control_prey_move = True,
+                    auto_control_predator_move = True)
+
+        elif sys.argv[1] == "-d":
+
+            game.sensor_demo(auto_control_prey_num = 1,
+                    auto_control_predator_num = 1,
                     auto_control_prey_move = True,
                     auto_control_predator_move = True)
 

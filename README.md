@@ -110,11 +110,22 @@ In the second stage, I use Pygame to create the GUI for simulation. Matplotlib i
 
 Animals are continuously evolving, they now have the ability to sense outer world and make decisions. In this stage, I implemented the NEAT algorithm for the animals. Each animal has a genome, the animal live the longest in the simulation will be able to pass its genome to the next generation. The next generation will have a chance to mutate its genome. The mutation can be a new connection between neurons, a new neuron, or a new weight for the connection. Consequently, the animals are able to sense outer world with their antennas.
 
-![Phase3_animal_sensors](Phase3_animal_sensors.gif)
-![Phase3_animal_brain](Phase3_animal_brain.gif)
-![Phase3_simulation](Phase3_simulation.gif)
+![Phase3_animal_sensors](Phase3_animal_sensors.gif) <!-- a gif showing the animal's ability to sense danger>
+<br>
 
-This stage is inspired by the [ai-car-simulation](https://github.com/NeuralNine/ai-car-simulation/tree/master), and the [Evolving AI, Prey vs Predator](https://www.youtube.com/watch?v=qwrp3lB-jkQ&t=335s). All code are written from scratch with my own understanding.
+<div align="center">
+  <img src="gif/phase_3/prey_sensors.gif" width="30%"/>
+</div>
+
+<div align="center">
+  <em>GIF 6: phase_3 prey sensors.gif</em>
+</div>
+
+<br>
+![Phase3_animal_brain](Phase3_animal_brain.gif) <!--  a gif showing the animal's brain to make decision>
+![Phase3_simulation](Phase3_simulation.gif) <!-- a gif showing the simulation>
+
+This stage is inspired by the [ai-car-simulation](https://github.com/NeuralNine/ai-car-simulation/tree/master), and the [Evolving AI, Prey vs Predator](https://www.youtube.com/watch?v=qwrp3lB-jkQ&t=335s). All code are written from scratch, with the use of [NEAT-Python](https://neat-python.readthedocs.io/en/latest/).
 
 ### Phase 4
 

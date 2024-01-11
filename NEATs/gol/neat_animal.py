@@ -79,8 +79,7 @@ class Animal:
         self.x %= SCREEN_SIZE
         self.y %= SCREEN_SIZE
 
-        self.rect = self.image.get_rect(center = (round(self.x), round(self.y)))
-        self.collision_circle_center = (round(self.x), round(self.y))
+        self._get_center()
         
     def turn(self, steering):
 
@@ -95,7 +94,25 @@ class Animal:
         # Rotate the original image
         self.image = pygame.transform.rotate(self.original_image, -self.angle)
 
-        # Recalculate the rect
+        self._get_center()
+
+    def circle(self):
+        # manual piloting for demonstration
+
+        self.velocity = 2.5
+        self.x += self.velocity * math.cos(math.radians(self.angle))
+        self.y += self.velocity * math.sin(math.radians(self.angle))
+        self.x %= SCREEN_SIZE
+        self.y %= SCREEN_SIZE
+
+        self.angle -= 1
+        self.angle %= 360
+        self.image = pygame.transform.rotate(self.original_image, -self.angle)
+
+        self._get_center()
+
+    def _get_center(self):
+        # re-center
         self.rect = self.image.get_rect(center = (round(self.x), round(self.y)))
         self.collision_circle_center = (round(self.x), round(self.y))
 
@@ -157,8 +174,13 @@ class Prey(Animal):
     
     def build_antenna(self):
         # Build antennas
-        antennas_angles = [-60, -30, 0, 30, 60]
-        antennas_lengths = [100, 150, 200, 150, 100]
+        antennas_angles = []
+        antennas_lengths = []
+        for i in range(-120, 121, 15):
+            antennas_angles.append(i)
+            antennas_lengths.append(200)
+        # antennas_angles = [-60, -30, 0, 30, 60]
+        # antennas_lengths = [100, 150, 200, 150, 100]
         # antennas_angles = [0]
         # antennas_lengths = [200]
 
